@@ -197,7 +197,7 @@ public class GameScreen extends ScreenAdapter {
         mUfo.setPosition(WORLD_WIDTH / 2 - Ufo.UFO_WIDTH / 2, y);
 
         // Enemyを配置
-        mEnemy = new Enemy(enemyTexture, 0, 0, 72, 72);
+        mEnemy = new Enemy(enemyTexture, 0, 0, 300, 260);
         mEnemy.setPosition(WORLD_WIDTH / 2 - Enemy.ENEMY_WIDTH / 2, y);
     }
 
@@ -274,7 +274,7 @@ public class GameScreen extends ScreenAdapter {
 
     private void checkCollision() {
 
-        Sound sound = Gdx.audio.newSound(Gdx.files.internal("data/punch.mp3"));
+        Sound sound = Gdx.audio.newSound(Gdx.files.internal("punch.mp3"));
 
         // UFO(ゴール)か敵との当たり判定
         if (mPlayer.getBoundingRectangle().overlaps(mUfo.getBoundingRectangle())) {
