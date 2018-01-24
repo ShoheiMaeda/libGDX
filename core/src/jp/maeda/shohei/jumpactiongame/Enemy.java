@@ -26,22 +26,22 @@ public class Enemy extends GameObject{
             setX(getX() + velocity.x * deltaTime);
             setY(getY() + velocity.y * deltaTime);
 
-            if (getX() < ENEMY_WIDTH / 2) {
+            if (getX() < 0) {
                 velocity.x = -velocity.x;
-                setX(ENEMY_WIDTH / 2);
+                setX(0);
             }
-            if (getX() > GameScreen.WORLD_WIDTH - ENEMY_WIDTH / 2) {
+            if (getX() > GameScreen.WORLD_WIDTH - ENEMY_WIDTH) {
                 velocity.x = -velocity.x;
-                setX(GameScreen.WORLD_WIDTH - ENEMY_WIDTH / 2);
+                setX(GameScreen.WORLD_WIDTH - ENEMY_WIDTH);
             }
 
-            if (getY() < ENEMY_HEIGHT / 2) {
+            if (getY() < 0) {
                 velocity.y = -velocity.y;
-                setY(ENEMY_HEIGHT / 2);
+                setY(0);
             }
-            if (getY() > GameScreen.WORLD_HEIGHT - ENEMY_HEIGHT / 2) {
+            if (getY() > GameScreen.CAMERA_HEIGHT-ENEMY_HEIGHT) {
                 velocity.y = -velocity.y;
-                setY(GameScreen.WORLD_HEIGHT - ENEMY_HEIGHT / 2);
+                setY(GameScreen.CAMERA_HEIGHT-ENEMY_HEIGHT);
             }
         }
     }
